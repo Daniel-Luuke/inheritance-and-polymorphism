@@ -4,8 +4,8 @@ using namespace std;
 // Base class
 class Animal {
 public:
-   //Note: We are NOT using 'virtual keyword here yet!
-   void speak(){
+   //THE FIX: Add 'virtual' here
+   virtual void speak(){
     cout << "Animal makes a generic sound." << endl;
    }
 };
@@ -20,7 +20,7 @@ public:
 };
 
 int main() {
-  cout << "--- Without Virtual Keyword ---" << endl;
+  cout << "--- With Virtual Keyword ---" << endl;
 
   // We create a POINTER of type Animal (Base)
   Animal* myPet;
@@ -33,6 +33,6 @@ int main() {
   myPet->speak(); // <--- ANALYZE THIS LINE
 
   delete myPet;
-  
+
   return 0;
 }
